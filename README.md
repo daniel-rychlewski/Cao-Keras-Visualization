@@ -8,19 +8,19 @@ This tool allows to generate compressed variants of the model using [average-per
 For the cao model, I picked the pruning percentages 0%, 40%, 55%, 70% and 85% for visualization purposes because looking at an accuracy graph, these were the points where the behavior of the curve changed (cf. [pruning evaluation](https://github.com/daniel-rychlewski/hsi-toolbox/blob/master/DeepHyperX/outputs/Excel%20Evaluations/Evaluation%20Pruning.xlsx)).
 All gradient-based saliency map visualizations without prior band selection have turned out to be black squares. However, using PCA or NMF for image compression, one can see a gradient picture which is becoming increasingly distorted the higher we set the pruning percentage. This allows for the assumption that <b>important neurons remain unimpaired by moderate pruning</b>. My NMF results vary less with increasing pruning percentage than the PCA results. These trends are valid for all trainable weights of all layers of the cao model, as the following picture illustrates (from left to right: <i>from_band</i>: 0, <i>to_band</i>: 100, <i>step_band</i>: 10)
 
-![Visualization](./outputs/Visualization.png)
+![Visualization](https://github.com/daniel-rychlewski/Cao-Keras-Visualization-private/blob/master/outputs/Visualization.png)
 
 As for the activation maps, they remain completely unchanged throughout all layers and all pruning percentages, but vary among the band compression techniques (the same image bands as above are chosen): 
 
-![Activation maps](./outputs/Activation maps.png)
+![Activation Maps](https://github.com/daniel-rychlewski/Cao-Keras-Visualization-private/blob/master/outputs/Activation%20Maps.png)
 
-For more visualization-related theory, please delve into my [master thesis](./outputs/Master Thesis.pdf) and/or my [thesis defense](./outputs/Thesis Defense.pptx).
+For more visualization-related theory, please delve into my [master thesis](https://github.com/daniel-rychlewski/Cao-Keras-Visualization-private/blob/master/outputs/Master%20Thesis.pdf) and/or my [thesis defense](https://github.com/daniel-rychlewski/Cao-Keras-Visualization-private/blob/master/outputs/Thesis%20Defense.pptx).
 
 ## Architecture
 
 For the sake of maximum flexibility in the visualization implementations, e.g., to be able to use integrated gradients instead of "normal" gradients, I have decided to use the methods of [deep-viz-keras](https://github.com/experiencor/deep-viz-keras) instead of [Keras-vis](https://github.com/raghakot/keras-vis).
 
-![Architecture](./outputs/Architecture.png)
+![Architecture](https://github.com/daniel-rychlewski/Cao-Keras-Visualization-private/blob/master/outputs/Architecture.png)
 
 The following are the core components of the application:
 
